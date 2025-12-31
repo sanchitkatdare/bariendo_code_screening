@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './FoodCard.css';
+import Favorite from './Favorite'
 
 function FoodCard({ food }) {
   const [expanded, setExpanded] = useState(false);
@@ -17,7 +18,10 @@ function FoodCard({ food }) {
   return (
     <div className="food-card">
       <div className="food-card-header">
-        <h3 className="food-name">{food.description}</h3>
+        <div className="food-card-name-container">
+          <h3 className="food-name">{food.description}</h3>
+          <Favorite food={food} />
+        </div>
         {food.brandOwner && (
           <p className="food-brand">{food.brandOwner}</p>
         )}

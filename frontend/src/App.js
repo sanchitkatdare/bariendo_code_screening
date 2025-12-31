@@ -3,9 +3,12 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import SearchPage from './pages/SearchPage';
 import HomePage from './pages/HomePage';
+import Favorites from './pages/Favorites';
+import { StoreProvider } from './context/StoreContext';
 
 function App() {
   return (
+    <StoreProvider>
     <Router>
       <div className="App">
         <nav className="navbar">
@@ -24,6 +27,11 @@ function App() {
                   Search
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to="/favorites" className="nav-link">
+                  Favorites
+                </Link>
+              </li>
             </ul>
           </div>
         </nav>
@@ -32,10 +40,12 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/search" element={<SearchPage />} />
+            <Route path="/favorites" element={<Favorites />} />
           </Routes>
         </main>
       </div>
     </Router>
+    </StoreProvider>
   );
 }
 

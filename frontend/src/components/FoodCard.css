@@ -14,6 +14,14 @@
   margin-bottom: 1rem;
 }
 
+.food-card-name-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .food-name {
   font-size: 1.1rem;
   color: #2c3e50;
